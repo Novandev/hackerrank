@@ -14,7 +14,7 @@ def counting_clouds(cloud_array: list) -> int:
     counter = 0 # sentinel to keep a counter going to track positions ahead of it
     arr_len = len(cloud_array) -1 # need a value to make sure we dont run over index in list
     while counter < arr_len: # while the counter value is less than the array length
-        if counter + 2 < arr_len or cloud_array[counter + 2] == 0: # Check two position ahead and check if the next is a 0
+        if counter + 2 < arr_len and cloud_array[counter + 2] == 0: # Check two position ahead and check if the next is a 0
             counter += 2 # increase the counter
             total_step_count += 1 # increase total count
         else:
