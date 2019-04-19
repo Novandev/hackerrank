@@ -23,8 +23,6 @@ def hourglass_max_sum(d_array: list) -> int:
 
         for pos in hour_glass:
             sum += d_array[pos[0]][pos[1]]
-        print(sum)
-        print(max)
         if sum > max:
             max = sum
         sum = 0
