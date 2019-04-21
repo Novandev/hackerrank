@@ -6,6 +6,10 @@ THis function should take a random 6x6 array and postion wise get a sum of all o
 import traceback
 
 def hourglass_max_sum(d_array: list) -> int:
+    """
+    Params: an array that is a 6X6
+    Return: a max value of the patern defined in the array
+    """
     # print(d_array)
     hour_glass =[ [0,0], [0, 1], [0, 2], [1, 1], [2, 0], [2, 1], [2,2] ] 
     hour_glass_reset =[0, 1, 2, 1, 0, 1, 2]
@@ -29,7 +33,7 @@ def hourglass_max_sum(d_array: list) -> int:
         for couple in hour_glass:
             couple[1] += 1
         
-    print(max)
+    return max
         
 if __name__ == "__main__":
     test_list = [
@@ -40,4 +44,12 @@ if __name__ == "__main__":
         [0, 0, 0, 2, 0, 0],
         [0, 0, 1, 2, 4, 0]
     ]
-    hourglass_max_sum(test_list)
+    test_list_2=[
+        [-9, -9, -9, 1, 1, 1], 
+        [0, -9, 0, 4, 3, 2],
+        [-9, -9, -9, 1, 2, 3],
+        [0, 0, 8, 6, 6, 0],
+        [0, 0, 0, -2, 0, 0],
+        [0, 0, 1, 2, 4, 0]
+    ]
+    print(hourglass_max_sum(test_list_2))
