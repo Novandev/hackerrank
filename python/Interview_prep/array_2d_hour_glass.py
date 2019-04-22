@@ -16,20 +16,23 @@ def hourglass_max_sum(d_array: list) -> int:
     sum =0
     stop= [5,5]
     max =0
+    # While the last list inst on [5,5]
     while hour_glass[len(hour_glass) -1] != stop:
         if hour_glass[len(hour_glass) - 1][1] >= 5:
-
             for couple in hour_glass:
                 couple[0] += 1
 
             for i in range(len(hour_glass)):
                 hour_glass[i][1] = hour_glass_reset[i]
+            print(hour_glass)
 
         for pos in hour_glass:
             sum += d_array[pos[0]][pos[1]]
         if sum > max:
             max = sum
         sum = 0
+        print(max)
+        print(sum)
         for couple in hour_glass:
             couple[1] += 1
         
@@ -52,4 +55,4 @@ if __name__ == "__main__":
         [0, 0, 0, -2, 0, 0],
         [0, 0, 1, 2, 4, 0]
     ]
-    print(hourglass_max_sum(test_list_2))
+    print(hourglass_max_sum(test_list))
