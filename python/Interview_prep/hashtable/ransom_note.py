@@ -11,16 +11,20 @@ def checkMagazine(magazine: list, note: list) -> str:
 
 
     magazine_dict = {x: magazine.count(x) for x in magazine}
-    for word in note:
+    word_dict = {x: note.count(x) for x in note}
+    print(word_dict)
+    for word in word_dict:
         if word not in magazine_dict:
-            return "No"
-        if magazine_dict[word] == 0:
-            return "No"
-        else:
-            magazine_dict[word] -= 1
-    return "Yes"
+            print("No")
+            return
+        if magazine_dict[word] < word_dict[word]:
+            print("No")
+            return
+        
+    print("Yes")
 
-    return "yup"
+
+
 
 
 if __name__ == "__main__":
